@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# ЛОК VERA - Website
 
-## Getting Started
+Премиальный сайт для проекта апартаментов "ЛОК VERA".
 
-First, run the development server:
+## Технологии
+
+- Next.js 16 (App Router)
+- TailwindCSS v4
+- Framer Motion
+- React Hook Form
+
+## Настройка
+
+### 1. Установка зависимостей
+
+```bash
+npm install
+```
+
+### 2. Запуск в режиме разработки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Сборка для продакшена
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Конфигурация
 
-## Learn More
+### Webhook для заявок
 
-To learn more about Next.js, take a look at the following resources:
+1. Создайте файл `.env.local` в корне проекта.
+2. Добавьте переменную `LEAD_WEBHOOK_URL`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+LEAD_WEBHOOK_URL=https://your-webhook-url.com/catch
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Если переменная не задана, заявки будут выводиться в консоль (mock mode).
 
-## Deploy on Vercel
+### Изменение телефона
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Телефон указан в компоненте `components/cta.tsx` и `components/footer.tsx`. 
+Найдите строку `8 (800) 550-51-20` и замените на нужный номер.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Изображения
+
+Изображения находятся в папке `public/images/`.
+Для корректной работы замените плейсхолдеры на реальные файлы:
+
+- `public/images/noise.png` - текстура шума
+- `public/images/map-placeholder.jpg` - карта локации
+
+## Деплой на Railway (через GitHub)
+
+1. Запушьте проект в GitHub.
+2. В Railway нажмите `New Project` -> `Deploy from GitHub repo`.
+3. Выберите этот репозиторий и ветку (обычно `main`).
+4. В `Variables` добавьте:
+   - `LEAD_WEBHOOK_URL`
+   - `TELEGRAM_BOT_TOKEN`
+   - `TELEGRAM_CHAT_ID`
+5. Railway автоматически соберет Next.js приложение и запустит его.
+
+В проекте уже добавлен `railway.json`, который задает:
+- запуск на `0.0.0.0` и порту `$PORT`
+- healthcheck `"/"`
+- policy перезапуска при ошибках
+
+## Структура проекта
+
+- `app/` - Страницы и глобальные стили
+- `components/` - UI компоненты (Hero, Concept, Investment и т.д.)
+- `lib/` - Утилиты (отправка лидов)
+- `tailwind.config.ts` - Настройки дизайна (цвета, шрифты)
+
+---
+© 2026 ЛОК VERA

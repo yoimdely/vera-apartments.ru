@@ -1,0 +1,41 @@
+﻿<svg width="1400" height="680" viewBox="0 0 1400 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="92" y1="42" x2="1234" y2="618" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="0.42" stop-color="#1D150B"/>
+      <stop offset="1" stop-color="#090909"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="268" y1="90" x2="1120" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0BA61" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#FFE0AB" stop-opacity="0.18"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1010 128) rotate(128) scale(540 442)">
+      <stop stop-color="#F5C067" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#F5C067" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1400" height="680" fill="url(#bg)"/>
+  <rect width="1400" height="680" fill="url(#glow)"/>
+
+  <path d="M0 530C175 496 288 430 422 376C558 320 708 332 880 286C1028 246 1188 152 1400 74" stroke="url(#gold)" stroke-width="2"/>
+  <path d="M0 600C210 574 340 508 498 462C660 416 792 420 976 374C1122 336 1248 264 1400 210" stroke="#F1BC67" stroke-opacity="0.34"/>
+  <path d="M0 662C188 626 316 580 452 548C626 506 742 512 918 462C1086 414 1220 336 1400 294" stroke="#F8D29A" stroke-opacity="0.24"/>
+
+  <g opacity="0.26" stroke="#FFE8BC">
+    <path d="M152 560V116"/>
+    <path d="M264 560V116"/>
+    <path d="M376 560V116"/>
+    <path d="M488 560V116"/>
+    <path d="M600 560V116"/>
+    <path d="M712 560V116"/>
+    <path d="M824 560V116"/>
+    <path d="M936 560V116"/>
+    <path d="M1048 560V116"/>
+    <path d="M1160 560V116"/>
+  </g>
+
+  <rect x="104" y="92" width="1192" height="486" rx="38" stroke="#F6C573" stroke-opacity="0.28"/>
+
+  <text x="128" y="154" fill="#F9D79C" fill-opacity="0.8" font-family="Georgia, serif" font-size="28" letter-spacing="4">UCH-DERE • SOCHI • LUXURY WELLNESS RESORT</text>
+</svg>
